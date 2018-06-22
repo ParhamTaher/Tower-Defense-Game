@@ -6,13 +6,19 @@ public class CameraController : MonoBehaviour {
     public float panBorderThickness = 10f;
     public float scrollSpeed = 5f;
     public float minY = 10f;
-    public float maxY = 80f;
+    public float maxY = 100f;
 
     private bool doMovement = true;
 
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(GameManager.gameEnded)
+        {
+            this.enabled = false;
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

@@ -21,8 +21,9 @@ public class WaveSpawner : MonoBehaviour {
         }
 
         countdown -= Time.deltaTime;
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        WaveCountdownText.text = Mathf.Round(countdown).ToString();
+        WaveCountdownText.text = string.Format("{0:00.00}", countdown);
     }
 
     // Coroutine
@@ -31,6 +32,7 @@ public class WaveSpawner : MonoBehaviour {
         Debug.Log("Wave Incoming!");
 
         waveIndex += 1;
+        PlayerStats.rounds += 1;
 
         for (int i = 0; i < waveIndex; i++)
         {
