@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     public static bool gameEnded;
     public GameObject gameOverUI;
+    public SceneFader sceneFader;
 
     private void Start()
     {
@@ -39,5 +41,14 @@ public class GameManager : MonoBehaviour {
         gameOverUI.SetActive(true);
 
         Debug.Log("Game Over");
+    }
+
+    public void WinLevel()
+    {
+
+        Debug.Log("level won!");
+        PlayerPrefs.SetInt("levelReached", PlayerPrefs.GetInt("levelReached") + 1);
+        sceneFader.FadeTo("Level02");
+
     }
 }
