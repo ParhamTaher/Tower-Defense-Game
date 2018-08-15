@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static bool gameEnded;
     public GameObject gameOverUI;
-    public SceneFader sceneFader;
+    public GameObject completeLevelUI;
 
     private void Start()
     {
@@ -47,8 +47,8 @@ public class GameManager : MonoBehaviour {
     {
 
         Debug.Log("level won!");
-        PlayerPrefs.SetInt("levelReached", PlayerPrefs.GetInt("levelReached") + 1);
-        sceneFader.FadeTo("Level02");
+        gameEnded = true;
+        completeLevelUI.SetActive(true);
 
     }
 }

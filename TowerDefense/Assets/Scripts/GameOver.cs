@@ -4,14 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
-    public Text roundsText;
     public string menuSceneName = "MainMenu";
     public SceneFader sceneFader;
-
-    private void OnEnable()
-    {
-        roundsText.text = PlayerStats.rounds.ToString();
-    }
 
     public void Retry()
     {
