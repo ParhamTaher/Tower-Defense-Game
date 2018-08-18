@@ -42,6 +42,8 @@ public class PauseMenu : MonoBehaviour {
     {
 
         ToggleMenu();
+        Time.timeScale = 1f;
+        Debug.Log("Getting active scene: " + SceneManager.GetActiveScene().name);
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -52,6 +54,7 @@ public class PauseMenu : MonoBehaviour {
 
         Debug.Log("Go to Menu");
         ToggleMenu();
+        Time.timeScale = 1f;
         sceneFader.FadeTo(menuSceneName);
 
     }

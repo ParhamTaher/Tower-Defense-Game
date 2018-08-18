@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
+        // Remove for production
         if(Input.GetKeyDown("e"))
         {
             EndGame();
